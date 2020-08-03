@@ -15,7 +15,7 @@ Automatic persistence and database handling for iOS/mac etc. Fast, automatic mig
 
 2. Make sure you setup and migrate (if needed) before using the objects. It happens in the background, and is usually very fast:
 
-```
+```Swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
 {
 	AutoDB.sharedInstance.createDatabaseMigrateBlock(nil)
