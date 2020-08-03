@@ -25,12 +25,22 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 3. Done. Use the objects like any other objects, and they will automatically be persisted on disc when the app closes. If you add or remove properties, the underlying database table will be migrated seamlessly. Only if you rename values or change their type, will you be required to do some work.
 
+Open AutoDBExample to see an example project.
+
 ---
 
 ## Installation
 1. Download or clone the repository. 
 2. Drag the AutoDBFramework.xcodeproj into your project. 
 3. In your target settings, under "General" -> "Frameworks, Libraries and embedded content". Click the plus button and select AutoDBFramework.framework
+
+---
+
+## 🚀🚀 Sponsorships 🚀🚀
+
+AutoDB is fully funded by [Aggressive Development AB](https://aggressive.se). Who are currently using it in the great news reader [Feeds](https://feeds-app.com), please check it out! (Its also my job).
+
+If you require support or need a feature implemented, you can support its development. You can also be listed here as an official sponsor. Feel free to drop me a line at [autoDB@aggressive.se](mailto:autoDB@aggressive.se) or twitter [@olof_t](https://twitter.com/olof_t)
 
 ---
 
@@ -46,11 +56,18 @@ All objects are cached (but only as long as they are referenced), this means tha
 
 ---
 
-## 🚀🚀 Sponsorships 🚀🚀
+## SQL
 
-AutoDB is fully funded by [Aggressive Development AB](https://aggressive.se). Who are currently using it in the great news reader [Feeds](https://feeds-app.com), please check it out! (Its also my job).
+All of the underlying SQLite-power is still accessible, and you are free to perform any tasks you like.
 
-If you require support or need a feature implemented, you can support its development. You can also be listed here as an official sponsor. Feel free to drop me a line at [autoDB@aggressive.se](mailto:autoDB@aggressive.se) or twitter [@olof_t](https://twitter.com/olof_t)
+## Differences from CoreData etc
+
+1. It's a database first, with some ORM features (instead of the other way around)
+2. Thread safe, you can fetch objects in one place and use them anywhere else.
+3. Migrations are usually automatic, or never needed. You are still free to modify your classes at will.
+4. No dangling references
+5. No conflicts
+6. Only one model since the class IS the model. No other files needed to define your database.
 
 ---
 
@@ -66,14 +83,17 @@ The classes for syncing and some documentation is included so if you want to tak
 
 Use the library and tell me about it! That contributes the most.
 
-Regarding the actual code: the main focus now is Swift, since I am moving all of my projects to Swift. Sadly Swift isn't powerful enough (yet), to replace Objc in all aspects that AutoDB needs, at least not in the way it works currently.
+If you find any bugs I will gladly fix those, but I need an test-case, code example or something so that I can reproduce the issue.
+
+Regarding the actual code: the main focus now is Swift, since I am moving all of my projects to Swift. Sadly Swift isn't powerful enough (yet), to replace Objc in all aspects that AutoDB needs, at least not in the way it works currently. There could be ways to work around the limitations of Swift, I have a few ideas but not the time to try it out.
+
+These are the main points:
 
 * Follow the code style or at least write as readable code as you possibly can.
-* Have an automatic mind-set: use sane defaults that can be changed, and letting code do the work so the human don't have to. 
+* Have an automatic mind-set: use sane defaults that can be changed, and let the code do the work so humans don't have to. 
 * Improve Swift APIs, making the APIs having a more Swift-friendly style
 * Find bugs 
 * Improve syncing: find bugs and build more tests regarding syncing.
 * Replace key features using Swift
-
 
 
