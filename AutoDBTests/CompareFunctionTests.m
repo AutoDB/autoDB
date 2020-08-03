@@ -227,8 +227,9 @@ static NSMutableArray *idArray;
 	{
 		for (AutoModel *object in cachedObjects)
 		{
-			[fetchedObjects.rows addObject:object];
-			fetchedObjects.dictionary[object.idValue] = object;
+			[fetchedObjects.mutableRows addObject:object];
+			if (fetchedObjects.hasCreatedDict)
+				fetchedObjects.mutableDictionary[object.idValue] = object;
 		}
 	}
 	
