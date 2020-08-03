@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5E6A6C724D6EB110084593B /* AutoDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */; };
+		D5E6A6CC24D6EB110084593B /* AutoDBFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6CB24D6EB110084593B /* AutoDBFrameworkTests.m */; };
+		D5E6A6CE24D6EB110084593B /* AutoDBFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6C024D6EB110084593B /* AutoDBFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A6F224D6EB580084593B /* AutoConcurrentMapTable.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6D824D6EB580084593B /* AutoConcurrentMapTable.m */; };
+		D5E6A6F324D6EB580084593B /* AutoDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6D924D6EB580084593B /* AutoDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A6F424D6EB580084593B /* AutoThread.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6DA24D6EB580084593B /* AutoThread.m */; };
+		D5E6A6F724D6EB580084593B /* AutoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6DD24D6EB580084593B /* AutoModel.m */; };
+		D5E6A6F824D6EB580084593B /* AutoModelRelation.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6DE24D6EB580084593B /* AutoModelRelation.m */; };
+		D5E6A6FA24D6EB580084593B /* AutoThread.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6E024D6EB580084593B /* AutoThread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A6FB24D6EB580084593B /* AutoDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6E124D6EB580084593B /* AutoDB.m */; };
+		D5E6A6FC24D6EB580084593B /* AutoConcurrentMapTable.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6E224D6EB580084593B /* AutoConcurrentMapTable.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A6FE24D6EB580084593B /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = D5E6A6E524D6EB580084593B /* README.markdown */; };
+		D5E6A6FF24D6EB580084593B /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = D5E6A6E624D6EB580084593B /* LICENSE.txt */; };
+		D5E6A70024D6EB580084593B /* AFMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6E824D6EB580084593B /* AFMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A70124D6EB580084593B /* AFMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6E924D6EB580084593B /* AFMResultSet.m */; };
+		D5E6A70224D6EB580084593B /* AFMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6EA24D6EB580084593B /* AFMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A70324D6EB580084593B /* AFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6EB24D6EB580084593B /* AFMDatabaseQueue.m */; };
+		D5E6A70424D6EB580084593B /* AFMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6EC24D6EB580084593B /* AFMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A70524D6EB580084593B /* AFMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6ED24D6EB580084593B /* AFMDatabase.m */; };
+		D5E6A70724D6EB580084593B /* AutoModelRelation.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6EF24D6EB580084593B /* AutoModelRelation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A70824D6EB580084593B /* AutoModel.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6F024D6EB580084593B /* AutoModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5E6A71924D6EB840084593B /* AutoParent.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A70B24D6EB840084593B /* AutoParent.m */; };
+		D5E6A71A24D6EB840084593B /* ThreadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A70C24D6EB840084593B /* ThreadTests.m */; };
+		D5E6A71B24D6EB840084593B /* PropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A70D24D6EB840084593B /* PropertyTests.m */; };
+		D5E6A71C24D6EB840084593B /* LastAutoDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A70E24D6EB840084593B /* LastAutoDBTests.m */; };
+		D5E6A71D24D6EB840084593B /* SecondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A70F24D6EB840084593B /* SecondModel.m */; };
+		D5E6A71E24D6EB840084593B /* RelationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A71024D6EB840084593B /* RelationTests.m */; };
+		D5E6A71F24D6EB840084593B /* ConcurrencyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A71124D6EB840084593B /* ConcurrencyModel.m */; };
+		D5E6A72024D6EB840084593B /* ValueHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A71224D6EB840084593B /* ValueHandling.m */; };
+		D5E6A72124D6EB840084593B /* CompareFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A71324D6EB840084593B /* CompareFunctionTests.m */; };
+		D5E6A72224D6EB840084593B /* CreateDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A71724D6EB840084593B /* CreateDBTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5E6A6C824D6EB110084593B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E6A6B424D6EB110084593B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5E6A6BC24D6EB110084593B;
+			remoteInfo = AutoDBFramework;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoDBFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E6A6C024D6EB110084593B /* AutoDBFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoDBFramework.h; sourceTree = "<group>"; };
+		D5E6A6C124D6EB110084593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E6A6C624D6EB110084593B /* AutoDBFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutoDBFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5E6A6CB24D6EB110084593B /* AutoDBFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoDBFrameworkTests.m; sourceTree = "<group>"; };
+		D5E6A6CD24D6EB110084593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E6A6D824D6EB580084593B /* AutoConcurrentMapTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoConcurrentMapTable.m; sourceTree = "<group>"; };
+		D5E6A6D924D6EB580084593B /* AutoDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoDB.h; sourceTree = "<group>"; };
+		D5E6A6DA24D6EB580084593B /* AutoThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoThread.m; sourceTree = "<group>"; };
+		D5E6A6DD24D6EB580084593B /* AutoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoModel.m; sourceTree = "<group>"; };
+		D5E6A6DE24D6EB580084593B /* AutoModelRelation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoModelRelation.m; sourceTree = "<group>"; };
+		D5E6A6E024D6EB580084593B /* AutoThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoThread.h; sourceTree = "<group>"; };
+		D5E6A6E124D6EB580084593B /* AutoDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoDB.m; sourceTree = "<group>"; };
+		D5E6A6E224D6EB580084593B /* AutoConcurrentMapTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoConcurrentMapTable.h; sourceTree = "<group>"; };
+		D5E6A6E524D6EB580084593B /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		D5E6A6E624D6EB580084593B /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		D5E6A6E824D6EB580084593B /* AFMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMDatabaseQueue.h; sourceTree = "<group>"; };
+		D5E6A6E924D6EB580084593B /* AFMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMResultSet.m; sourceTree = "<group>"; };
+		D5E6A6EA24D6EB580084593B /* AFMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMDatabase.h; sourceTree = "<group>"; };
+		D5E6A6EB24D6EB580084593B /* AFMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMDatabaseQueue.m; sourceTree = "<group>"; };
+		D5E6A6EC24D6EB580084593B /* AFMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFMResultSet.h; sourceTree = "<group>"; };
+		D5E6A6ED24D6EB580084593B /* AFMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFMDatabase.m; sourceTree = "<group>"; };
+		D5E6A6EF24D6EB580084593B /* AutoModelRelation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoModelRelation.h; sourceTree = "<group>"; };
+		D5E6A6F024D6EB580084593B /* AutoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoModel.h; sourceTree = "<group>"; };
+		D5E6A70B24D6EB840084593B /* AutoParent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoParent.m; sourceTree = "<group>"; };
+		D5E6A70C24D6EB840084593B /* ThreadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadTests.m; sourceTree = "<group>"; };
+		D5E6A70D24D6EB840084593B /* PropertyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyTests.m; sourceTree = "<group>"; };
+		D5E6A70E24D6EB840084593B /* LastAutoDBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastAutoDBTests.m; sourceTree = "<group>"; };
+		D5E6A70F24D6EB840084593B /* SecondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondModel.m; sourceTree = "<group>"; };
+		D5E6A71024D6EB840084593B /* RelationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RelationTests.m; sourceTree = "<group>"; };
+		D5E6A71124D6EB840084593B /* ConcurrencyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConcurrencyModel.m; sourceTree = "<group>"; };
+		D5E6A71224D6EB840084593B /* ValueHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValueHandling.m; sourceTree = "<group>"; };
+		D5E6A71324D6EB840084593B /* CompareFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareFunctionTests.m; sourceTree = "<group>"; };
+		D5E6A71424D6EB840084593B /* AutoParent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoParent.h; sourceTree = "<group>"; };
+		D5E6A71524D6EB840084593B /* ConcurrencyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConcurrencyModel.h; sourceTree = "<group>"; };
+		D5E6A71624D6EB840084593B /* SecondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondModel.h; sourceTree = "<group>"; };
+		D5E6A71724D6EB840084593B /* CreateDBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDBTests.m; sourceTree = "<group>"; };
+		D5E6A71824D6EB840084593B /* ValueHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValueHandling.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5E6A6BA24D6EB110084593B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E6A6C324D6EB110084593B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E6A6C724D6EB110084593B /* AutoDBFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5E6A6B324D6EB110084593B = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6D724D6EB580084593B /* classes */,
+				D5E6A6BF24D6EB110084593B /* AutoDBFramework */,
+				D5E6A6CA24D6EB110084593B /* AutoDBFrameworkTests */,
+				D5E6A70A24D6EB840084593B /* AutoDBTests */,
+				D5E6A6BE24D6EB110084593B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5E6A6BE24D6EB110084593B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */,
+				D5E6A6C624D6EB110084593B /* AutoDBFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5E6A6BF24D6EB110084593B /* AutoDBFramework */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6C024D6EB110084593B /* AutoDBFramework.h */,
+				D5E6A6C124D6EB110084593B /* Info.plist */,
+			);
+			path = AutoDBFramework;
+			sourceTree = "<group>";
+		};
+		D5E6A6CA24D6EB110084593B /* AutoDBFrameworkTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6CB24D6EB110084593B /* AutoDBFrameworkTests.m */,
+				D5E6A6CD24D6EB110084593B /* Info.plist */,
+			);
+			path = AutoDBFrameworkTests;
+			sourceTree = "<group>";
+		};
+		D5E6A6D724D6EB580084593B /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6E224D6EB580084593B /* AutoConcurrentMapTable.h */,
+				D5E6A6D824D6EB580084593B /* AutoConcurrentMapTable.m */,
+				D5E6A6D924D6EB580084593B /* AutoDB.h */,
+				D5E6A6E124D6EB580084593B /* AutoDB.m */,
+				D5E6A6F024D6EB580084593B /* AutoModel.h */,
+				D5E6A6DD24D6EB580084593B /* AutoModel.m */,
+				D5E6A6EF24D6EB580084593B /* AutoModelRelation.h */,
+				D5E6A6DE24D6EB580084593B /* AutoModelRelation.m */,
+				D5E6A6E024D6EB580084593B /* AutoThread.h */,
+				D5E6A6DA24D6EB580084593B /* AutoThread.m */,
+				D5E6A6E424D6EB580084593B /* FMDB */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		D5E6A6E424D6EB580084593B /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6E524D6EB580084593B /* README.markdown */,
+				D5E6A6E624D6EB580084593B /* LICENSE.txt */,
+				D5E6A6E724D6EB580084593B /* src */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		D5E6A6E724D6EB580084593B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A6E824D6EB580084593B /* AFMDatabaseQueue.h */,
+				D5E6A6E924D6EB580084593B /* AFMResultSet.m */,
+				D5E6A6EA24D6EB580084593B /* AFMDatabase.h */,
+				D5E6A6EB24D6EB580084593B /* AFMDatabaseQueue.m */,
+				D5E6A6EC24D6EB580084593B /* AFMResultSet.h */,
+				D5E6A6ED24D6EB580084593B /* AFMDatabase.m */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		D5E6A70A24D6EB840084593B /* AutoDBTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5E6A70B24D6EB840084593B /* AutoParent.m */,
+				D5E6A70C24D6EB840084593B /* ThreadTests.m */,
+				D5E6A70D24D6EB840084593B /* PropertyTests.m */,
+				D5E6A70E24D6EB840084593B /* LastAutoDBTests.m */,
+				D5E6A70F24D6EB840084593B /* SecondModel.m */,
+				D5E6A71024D6EB840084593B /* RelationTests.m */,
+				D5E6A71124D6EB840084593B /* ConcurrencyModel.m */,
+				D5E6A71224D6EB840084593B /* ValueHandling.m */,
+				D5E6A71324D6EB840084593B /* CompareFunctionTests.m */,
+				D5E6A71424D6EB840084593B /* AutoParent.h */,
+				D5E6A71524D6EB840084593B /* ConcurrencyModel.h */,
+				D5E6A71624D6EB840084593B /* SecondModel.h */,
+				D5E6A71724D6EB840084593B /* CreateDBTests.m */,
+				D5E6A71824D6EB840084593B /* ValueHandling.h */,
+			);
+			path = AutoDBTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D5E6A6B824D6EB110084593B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E6A70724D6EB580084593B /* AutoModelRelation.h in Headers */,
+				D5E6A6CE24D6EB110084593B /* AutoDBFramework.h in Headers */,
+				D5E6A6F324D6EB580084593B /* AutoDB.h in Headers */,
+				D5E6A6FC24D6EB580084593B /* AutoConcurrentMapTable.h in Headers */,
+				D5E6A70024D6EB580084593B /* AFMDatabaseQueue.h in Headers */,
+				D5E6A70424D6EB580084593B /* AFMResultSet.h in Headers */,
+				D5E6A70224D6EB580084593B /* AFMDatabase.h in Headers */,
+				D5E6A6FA24D6EB580084593B /* AutoThread.h in Headers */,
+				D5E6A70824D6EB580084593B /* AutoModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D5E6A6BC24D6EB110084593B /* AutoDBFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E6A6D124D6EB110084593B /* Build configuration list for PBXNativeTarget "AutoDBFramework" */;
+			buildPhases = (
+				D5E6A6B824D6EB110084593B /* Headers */,
+				D5E6A6B924D6EB110084593B /* Sources */,
+				D5E6A6BA24D6EB110084593B /* Frameworks */,
+				D5E6A6BB24D6EB110084593B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AutoDBFramework;
+			productName = AutoDBFramework;
+			productReference = D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D5E6A6C524D6EB110084593B /* AutoDBFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E6A6D424D6EB110084593B /* Build configuration list for PBXNativeTarget "AutoDBFrameworkTests" */;
+			buildPhases = (
+				D5E6A6C224D6EB110084593B /* Sources */,
+				D5E6A6C324D6EB110084593B /* Frameworks */,
+				D5E6A6C424D6EB110084593B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5E6A6C924D6EB110084593B /* PBXTargetDependency */,
+			);
+			name = AutoDBFrameworkTests;
+			productName = AutoDBFrameworkTests;
+			productReference = D5E6A6C624D6EB110084593B /* AutoDBFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5E6A6B424D6EB110084593B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Aggressive Development AB";
+				TargetAttributes = {
+					D5E6A6BC24D6EB110084593B = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					D5E6A6C524D6EB110084593B = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = D5E6A6B724D6EB110084593B /* Build configuration list for PBXProject "AutoDBFramework" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5E6A6B324D6EB110084593B;
+			productRefGroup = D5E6A6BE24D6EB110084593B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5E6A6BC24D6EB110084593B /* AutoDBFramework */,
+				D5E6A6C524D6EB110084593B /* AutoDBFrameworkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5E6A6BB24D6EB110084593B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E6A6FF24D6EB580084593B /* LICENSE.txt in Resources */,
+				D5E6A6FE24D6EB580084593B /* README.markdown in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E6A6C424D6EB110084593B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5E6A6B924D6EB110084593B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E6A70124D6EB580084593B /* AFMResultSet.m in Sources */,
+				D5E6A6F424D6EB580084593B /* AutoThread.m in Sources */,
+				D5E6A6F224D6EB580084593B /* AutoConcurrentMapTable.m in Sources */,
+				D5E6A70324D6EB580084593B /* AFMDatabaseQueue.m in Sources */,
+				D5E6A70524D6EB580084593B /* AFMDatabase.m in Sources */,
+				D5E6A6FB24D6EB580084593B /* AutoDB.m in Sources */,
+				D5E6A6F824D6EB580084593B /* AutoModelRelation.m in Sources */,
+				D5E6A6F724D6EB580084593B /* AutoModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5E6A6C224D6EB110084593B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5E6A72024D6EB840084593B /* ValueHandling.m in Sources */,
+				D5E6A71E24D6EB840084593B /* RelationTests.m in Sources */,
+				D5E6A71F24D6EB840084593B /* ConcurrencyModel.m in Sources */,
+				D5E6A71924D6EB840084593B /* AutoParent.m in Sources */,
+				D5E6A72224D6EB840084593B /* CreateDBTests.m in Sources */,
+				D5E6A71A24D6EB840084593B /* ThreadTests.m in Sources */,
+				D5E6A71C24D6EB840084593B /* LastAutoDBTests.m in Sources */,
+				D5E6A71D24D6EB840084593B /* SecondModel.m in Sources */,
+				D5E6A71B24D6EB840084593B /* PropertyTests.m in Sources */,
+				D5E6A6CC24D6EB110084593B /* AutoDBFrameworkTests.m in Sources */,
+				D5E6A72124D6EB840084593B /* CompareFunctionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5E6A6C924D6EB110084593B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5E6A6BC24D6EB110084593B /* AutoDBFramework */;
+			targetProxy = D5E6A6C824D6EB110084593B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D5E6A6CF24D6EB110084593B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D5E6A6D024D6EB110084593B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5E6A6D224D6EB110084593B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 486S4964R7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoDBFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.aggressive.AutoDBFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5E6A6D324D6EB110084593B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 486S4964R7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AutoDBFramework/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.aggressive.AutoDBFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D5E6A6D524D6EB110084593B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 486S4964R7;
+				INFOPLIST_FILE = AutoDBFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.aggressive.AutoDBFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5E6A6D624D6EB110084593B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 486S4964R7;
+				INFOPLIST_FILE = AutoDBFrameworkTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = se.aggressive.AutoDBFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5E6A6B724D6EB110084593B /* Build configuration list for PBXProject "AutoDBFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E6A6CF24D6EB110084593B /* Debug */,
+				D5E6A6D024D6EB110084593B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E6A6D124D6EB110084593B /* Build configuration list for PBXNativeTarget "AutoDBFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E6A6D224D6EB110084593B /* Debug */,
+				D5E6A6D324D6EB110084593B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5E6A6D424D6EB110084593B /* Build configuration list for PBXNativeTarget "AutoDBFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5E6A6D524D6EB110084593B /* Debug */,
+				D5E6A6D624D6EB110084593B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5E6A6B424D6EB110084593B /* Project object */;
+}
