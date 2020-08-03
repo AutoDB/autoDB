@@ -2,7 +2,9 @@
 
 Automatic persistence and database handling for iOS/mac etc. Fast, automatic migrations and thread safe.
 
+
 ##Usage
+
 
 1. Inherit AutoModel in your classes (objc or Swift), and define your properties using "@objc dynamic".
 
