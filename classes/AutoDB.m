@@ -216,7 +216,7 @@ static AutoDB *sharedInstance = nil;
 			{
 				for (NSString *className in items)
 				{
-					[runtimeClasses removeObject:NSClassFromString(className)];
+					[runtimeClasses removeObject:className];
 				}
 			}
 		}
