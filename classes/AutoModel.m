@@ -1075,7 +1075,11 @@ static NSString* fetchAllSignature = @"fetchAllIds";
 			
 			[resultReturner setObject:object forKey:id_field];
 			[tableCache setObject:object forKey:id_field];
-			
+		} while ([result next]);
+		
+		//we must call awakeFromFetch outside of the result, in case they also need to fetch
+		for (AutoModel *object in resultReturner.rows)
+		{
 			if (!object->isAwake)
 			{
 				[object awakeFromFetch];
@@ -1083,13 +1087,10 @@ static NSString* fetchAllSignature = @"fetchAllIds";
 			}
 			if (object->_is_deleted == NO)	//don't record changes for deleted objects
 				object->ignoreChanges = NO;
-			
-		} while ([result next]);
-		
+		}
 		
 		return resultReturner;
 	}
-	[result close];	//should not be needed, but is
     return nil;
 }
 
@@ -1248,10 +1249,10 @@ static NSString* fetchAllSignature = @"fetchAllIds";
 		NSArray *allObjects = [changesCache allObjects];
 		if (allObjects.count)
 		{
+			//NSLog(@"%@ had %i objects in its tablesWithChanges to save", classString, (int)allObjects.count);
 			[changesCache removeAllObjects];
 			Class table = NSClassFromString(classString);
 			error = [table save:allObjects];
-			//NSLog(@"%@ had %i objects in its tablesWithChanges to save", classString, (int)allObjects.count);
 		}
 	}];
 	return error;
@@ -1573,6 +1574,7 @@ static NSMutableDictionary <NSString*, NSNumber*>* throttleKeys;
 				}
 			} while ([resultSet next]);
 		}
+		[resultSet close];
     }];
 	
 	return result;
@@ -1599,6 +1601,7 @@ static NSMutableDictionary <NSString*, NSNumber*>* throttleKeys;
 				}
 			} while ([resultSet next]);
 		}
+		[resultSet close];
 	}];
 	
 	return result;
@@ -1623,6 +1626,7 @@ static NSMutableDictionary <NSString*, NSNumber*>* throttleKeys;
 			}
 			while ([resultSet next]);
 		}
+		[resultSet close];
     }];
     
     return result;
@@ -1993,6 +1997,7 @@ static dispatch_queue_t statementQueue;
 							}
 						}
 					}
+					[result close];
 				}
 				if (hasRemoved)
 				{
@@ -2064,7 +2069,10 @@ static dispatch_queue_t statementQueue;
         }
         if (idErrorCount > 2)
         {
-            NSLog(@"You have made some really weird error, unique ids can't be generated in the local db. Please investigate");
+            NSLog(@"Unique-constraints error in %@, unique ids can't be generated in the local db. Please investigate", self.classString);
+			//NOTE: its unique-constraints. If you have two objects with the same title, and title is unique - you get this error.
+			//TODO: auto-detect what properties are to blame and discard similar objects.
+			
             break;
         }
     }
@@ -2104,6 +2112,7 @@ static dispatch_queue_t statementQueue;
             [object generateNewId];
         }
     }
+	[result close];
 }
 
 #pragma mark - NSCacheDelegate
