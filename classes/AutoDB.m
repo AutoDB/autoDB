@@ -62,12 +62,23 @@ static AutoDB *sharedInstance = nil;
 //this method is not available in extensions.
 - (void) applicationWillResignActive:(NSNotification*)notif
 {
+	NSLog(@"AutoDB save due to resign message!");
+	[self autoSave];
+}
+
+- (void) applicationWillTerminate:(NSNotification*)notif
+{
+	NSLog(@"AutoDB save due to WillTerminate message!");
+	[self autoSave];
+}
+
+- (void) autoSave
+{
 	__block BOOL hasChanges = NO;
 	dispatch_sync(tablesWithChangesQueue, ^(void){
 		hasChanges = tablesWithChanges.count > 0;
 	});
 	if (hasChanges == NO) return;
-	NSLog(@"AutoDB save due to resign message!");
 	
 	__block UIBackgroundTaskIdentifier backgroundTaskIdentifier = UIBackgroundTaskInvalid;
 	dispatch_block_t endTaskHandler = ^
@@ -111,6 +122,7 @@ static AutoDB *sharedInstance = nil;
 	
 	NSLog(@"destroying database");
 	setupLockQueue = nil;
+	//First all queues must be paused, and any work assigned to them discared.
 	for (NSString *className in tableSyntax)
 	{
 		Class classObject = NSClassFromString(className);
@@ -120,7 +132,8 @@ static AutoDB *sharedInstance = nil;
 		{
 			//always wait for db to empty all queues.
 			[queue.thread syncPerformBlock:^{}];
-			objc_setAssociatedObject(classObject, @selector(databaseQueue), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+			[queue.thread cancel];
+			//objc_setAssociatedObject(classObject, @selector(databaseQueue), nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 		}
 		
 		AutoConcurrentMapTable *tableCache = objc_getAssociatedObject(classObject, @selector(tableCache));
@@ -234,13 +247,15 @@ static AutoDB *sharedInstance = nil;
 		[[NSNotificationCenter defaultCenter] postNotificationName:AutoDBIsSetupNotification object:nil userInfo:nil];
 	});
 	
-	//We must close db when quitting, (and open again on going fg) but only close AFTER all is done.
+	//save when app goes away
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:UIApplicationWillTerminateNotification object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:) name:UIApplicationWillResignActiveNotification object:nil];
+	//We must close db when quitting if using extensions, (and open again on going fg) but only close AFTER all is done.
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
 	
 	dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0), ^(void){
 		
-		//TODO: you are here - change this to use the dictionary with classNames instead of classes.
+		
 		[self internalCreateDatabaseWithPaths:pathsForClassNames allQueues:allQueues migrateBlock:migrateBlock];
 	});
 }
