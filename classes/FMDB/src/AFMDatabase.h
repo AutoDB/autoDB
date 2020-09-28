@@ -296,6 +296,7 @@
  */
 
 - (BOOL)executeUpdate:(NSString*)sql, ...;
+//- (BOOL)executeUpdate:(NSString*)sql;
 
 /** Execute update statement
 

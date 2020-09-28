@@ -1194,6 +1194,12 @@ typedef NS_ENUM(NSInteger, AutoFieldType)
 	return [self executeQuery:sql withArgumentsInArray:nil orDictionary:nil orVAList:args];
 }
 
+/*objc cannot handle this
+- (BOOL)executeUpdate:(NSString*)sql
+{
+	[self executeUpdate:sql];
+}
+*/
 - (BOOL)executeUpdate:(NSString*)sql error:(NSError**)outErr withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)vaListArgs
 {
 	if (![self databaseExists])
@@ -1566,6 +1572,13 @@ typedef NS_ENUM(NSInteger, AutoFieldType)
 	va_end(args);
 	return result;
 }
+
+/*
+- (BOOL)executeUpdate:(NSString*)sql
+{
+	return [self executeUpdate:sql error:nil withArgumentsInArray:nil orDictionary:nil orVAList:nil];
+}
+*/
 
 - (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments
 {

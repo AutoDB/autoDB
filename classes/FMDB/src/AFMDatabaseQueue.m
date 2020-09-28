@@ -142,7 +142,7 @@
             for (NSValue *rsInWrappedInATastyValueMeal in openSetCopy)
 			{
                 AFMResultSet *rs = (AFMResultSet *)[rsInWrappedInATastyValueMeal pointerValue];
-                NSLog(@"query: '%@'", [rs query]);
+                NSLog(@"open results query: '%@'", [rs query]);
             }
 #endif
         }
