@@ -13,7 +13,7 @@
 @interface AFMDatabaseQueue()
 {
 	AFMDatabase* _db;
-	BOOL preventReopen;
+	BOOL preventReopen, autoClose;
 }
 @end
 
@@ -89,6 +89,11 @@
 	preventReopen = NO;
 }
 
+- (void) autoClose: (BOOL)on
+{
+	autoClose = on;
+}
+
 - (void) close
 {
     [_thread syncPerformBlock:^()
@@ -146,6 +151,8 @@
             }
 #endif
         }
+		if (self->autoClose)
+			[self close];
     }];
 }
 
@@ -169,6 +176,8 @@
 			}
 #endif
 		}
+		if (self->autoClose)
+			[self close];
 	}];
 }
 

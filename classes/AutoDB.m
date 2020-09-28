@@ -1415,6 +1415,13 @@ static AutoDB *sharedInstance = nil;
 	}
 }
 
+#pragma mark - closeDB
+
+- (void) closeDB:(Class)autoModelClass
+{
+	
+}
+
 #pragma mark - helpers
 
 

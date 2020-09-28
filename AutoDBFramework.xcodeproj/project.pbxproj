@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5053DEF25228B0E0049C044 /* AutoCloseDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D5053DEE25228B0E0049C044 /* AutoCloseDB.m */; };
 		D5E6A6C724D6EB110084593B /* AutoDBFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */; };
 		D5E6A6CC24D6EB110084593B /* AutoDBFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5E6A6CB24D6EB110084593B /* AutoDBFrameworkTests.m */; };
 		D5E6A6CE24D6EB110084593B /* AutoDBFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E6A6C024D6EB110084593B /* AutoDBFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D5053DEE25228B0E0049C044 /* AutoCloseDB.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoCloseDB.m; sourceTree = "<group>"; };
 		D5E6A6BD24D6EB110084593B /* AutoDBFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutoDBFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E6A6C024D6EB110084593B /* AutoDBFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoDBFramework.h; sourceTree = "<group>"; };
 		D5E6A6C124D6EB110084593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				D5E6A71524D6EB840084593B /* ConcurrencyModel.h */,
 				D5E6A71624D6EB840084593B /* SecondModel.h */,
 				D5E6A71724D6EB840084593B /* CreateDBTests.m */,
+				D5053DEE25228B0E0049C044 /* AutoCloseDB.m */,
 				D5E6A71824D6EB840084593B /* ValueHandling.h */,
 			);
 			path = AutoDBTests;
@@ -352,6 +355,7 @@
 				D5E6A71C24D6EB840084593B /* LastAutoDBTests.m in Sources */,
 				D5E6A71D24D6EB840084593B /* SecondModel.m in Sources */,
 				D5E6A71B24D6EB840084593B /* PropertyTests.m in Sources */,
+				D5053DEF25228B0E0049C044 /* AutoCloseDB.m in Sources */,
 				D5E6A6CC24D6EB110084593B /* AutoDBFrameworkTests.m in Sources */,
 				D5E6A72124D6EB840084593B /* CompareFunctionTests.m in Sources */,
 			);

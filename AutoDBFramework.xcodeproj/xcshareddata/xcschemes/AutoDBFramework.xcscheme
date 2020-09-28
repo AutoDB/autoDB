@@ -37,6 +37,29 @@
                BlueprintName = "AutoDBFrameworkTests"
                ReferencedContainer = "container:AutoDBFramework.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "AutoDBFrameworkTests">
+               </Test>
+               <Test
+                  Identifier = "CompareFunctionTests">
+               </Test>
+               <Test
+                  Identifier = "CreateDBTests">
+               </Test>
+               <Test
+                  Identifier = "LastAutoDBTests">
+               </Test>
+               <Test
+                  Identifier = "PropertyTests">
+               </Test>
+               <Test
+                  Identifier = "RelationTests">
+               </Test>
+               <Test
+                  Identifier = "ThreadTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

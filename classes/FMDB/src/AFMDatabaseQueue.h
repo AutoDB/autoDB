@@ -135,6 +135,9 @@
 - (void) closeAndPreventReopen;
 ///Must be called when you want the db to reopen again.
 - (void) allowReopen;
+///When going background and you share the DB between other processes (like an extension), you need to always close the DB after accessing it - this closes it after every query so make sure to only use it when needed (eg saving bg-downloads, etc).
+///Does not work with transactions (yet).
+- (void) autoClose: (BOOL)on;
 
 ///-----------------------------------------------
 /// @name Dispatching database operations to queue
