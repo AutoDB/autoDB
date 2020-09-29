@@ -89,9 +89,14 @@
 	preventReopen = NO;
 }
 
-- (void) autoClose: (BOOL)on
+- (void) autoClose: (BOOL)_autoClose
 {
-	autoClose = on;
+	autoClose = _autoClose;
+}
+
+- (BOOL) isClosed
+{
+	return !_db;
 }
 
 - (void) close

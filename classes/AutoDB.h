@@ -82,7 +82,8 @@ typedef void (^MigrationBlock)(MigrationState state, NSMutableSet * _Nullable wi
 + (void) mainSync;
 + (void) setupSync:(NSDictionary <NSString*, NSArray <NSString*>*> *)pathsForClassNames;
 
-
+///Turn on or off auto-close on specific tables or all (if absent).
+- (void) autoClose:(BOOL)autoClose tables:(nullable NSArray <Class>*)autoModelClass;
 
 @end
 
