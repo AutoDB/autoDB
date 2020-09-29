@@ -17,6 +17,7 @@
 	NSMutableDictionary *tablesWithChanges;
 	NSMutableDictionary *tableSyntax;
 	
+	
 	AFMDatabaseQueue *setupLockQueue;
 	dispatch_queue_t tablesWithChangesQueue;		   //A queue for making changes to tablesWithChanges - so we don't need to interfere with the database queue while making changes to our objects. Was called dictionaryQueue
 	BOOL needsMigration, isSetup, hasSetupObservingProperties;
@@ -59,7 +60,7 @@ static AutoDB *sharedInstance = nil;
 }
 
 #ifndef TARGET_IS_EXTENSION
-//this method is not available in extensions.
+//these methods are not available in extensions.
 - (void) applicationWillResignActive:(NSNotification*)notif
 {
 	NSLog(@"AutoDB save due to resign message!");
@@ -104,8 +105,9 @@ static AutoDB *sharedInstance = nil;
 
 - (void) applicationWillEnterForeground:(NSNotification*)notif
 {
-	//open db if locked
-	//NSLog(@"open DB");
+	//turn off autoClose
+	NSLog(@"open DB");
+	[self autoClose:NO tables:nil];
 }
 
 #endif
@@ -561,6 +563,7 @@ static AutoDB *sharedInstance = nil;
 		[AutoSyncHandlerClass setupSync:pathsForClassNames];
 }
 
+//default implementation does nothing
 + (void) setupSync:(NSDictionary <NSString*, NSArray <NSString*>*> *)pathsForClassNames{};
 + (void) mainSync{};
 
@@ -1417,9 +1420,28 @@ static AutoDB *sharedInstance = nil;
 
 #pragma mark - closeDB
 
-- (void) closeDB:(Class)autoModelClass
+- (void) autoClose:(BOOL)autoClose tables:(nullable NSArray <Class>*)autoModelClasses
 {
+	AUTO_WAIT_FOR_SETUP
 	
+	NSSet *restrictClasses = nil;
+	if (autoModelClasses)
+		restrictClasses = [NSSet setWithArray:autoModelClasses];
+	
+	for (NSString *className in tableSyntax)
+	{
+		Class classObject = NSClassFromString(className);
+		if (restrictClasses && [restrictClasses containsObject:classObject])
+			continue;
+		
+		AFMDatabaseQueue *queue = [classObject databaseQueue];
+		if (queue)
+		{
+			[queue autoClose:autoClose];
+			if (autoClose)
+				[queue close];
+		}
+	}
 }
 
 #pragma mark - helpers
