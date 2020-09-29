@@ -59,7 +59,6 @@ static AutoDB *sharedInstance = nil;
 	return self;
 }
 
-#ifndef TARGET_IS_EXTENSION
 //these methods are not available in extensions.
 - (void) applicationWillResignActive:(NSNotification*)notif
 {
@@ -109,8 +108,6 @@ static AutoDB *sharedInstance = nil;
 	NSLog(@"open DB");
 	[self autoClose:NO tables:nil];
 }
-
-#endif
 
 - (void) destroyDatabase
 {
