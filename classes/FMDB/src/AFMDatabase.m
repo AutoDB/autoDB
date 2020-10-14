@@ -246,7 +246,7 @@
 - (void)closeOpenResultSets
 {
 	//Copy the set so we don't get mutation errors
-	NSSet *openSetCopy = FMDBReturnAutoreleased([_openResultSets copy]);
+	NSSet *openSetCopy = [_openResultSets copy];
 	for (NSValue *rsInWrappedInATastyValueMeal in openSetCopy)
 	{
 		AFMResultSet *rs = (AFMResultSet *)[rsInWrappedInATastyValueMeal pointerValue];

@@ -9,11 +9,13 @@
 #import "AFMDatabaseQueue.h"
 #import "AFMDatabase.h"
 #import "AutoThread.h"
+#import <UIKit/UIKit.h>
 
 @interface AFMDatabaseQueue()
 {
 	AFMDatabase* _db;
 	BOOL preventReopen, autoClose;
+	id backgroundIdentifier;
 }
 @end
 
@@ -35,6 +37,33 @@
 + (Class)databaseClass
 {
     return [AFMDatabase class];
+}
+
+- (void) startBackgroundTask
+{
+	//we could use UIApplication (if available), but when time is up - we must force-close the DB and loose unsaved data. Then we will never know what caused the problem.
+	//instead we use this, that works on all platforms. On iOS your app will be killed if you open DB when there are no background time remaining.
+	//SO: What is the optimal way of doing this?
+	backgroundIdentifier = [[NSProcessInfo processInfo] beginActivityWithOptions: NSActivityAutomaticTerminationDisabled | NSActivitySuddenTerminationDisabled | NSActivityUserInitiated reason:@"Saving data to database"];
+	/*
+	Class uiApplication = NSClassFromString(@"UIApplication");
+	if (uiApplication)
+	{
+		backgroundIdentifier = [[uiApplication sharedApplication] beginBackgroundTaskWithName:@"AutoDB bg access" expirationHandler:^{
+			
+			
+			self->autoClose = true;
+			[self close];
+			[[uiApplication sharedApplication] endBackgroundTask:self->backgroundIdentifier];
+			self->backgroundIdentifier = UIBackgroundTaskInvalid;
+		}];
+	}
+	*/
+}
+
+- (void) endBackgroundTask
+{
+	[[NSProcessInfo processInfo] endActivity:backgroundIdentifier];
 }
 
 - (instancetype)initWithPath:(NSString*)aPath flags:(int)openFlags
@@ -107,6 +136,7 @@
         [self->_db close];
 		self->_db = 0x00;
     }];
+	[self endBackgroundTask];
 }
 
 - (AFMDatabase*)database

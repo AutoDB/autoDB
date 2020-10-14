@@ -1436,7 +1436,7 @@ static AutoDB *sharedInstance = nil;
 		{
 			[queue autoClose:autoClose];
 			if (autoClose)
-				[queue close];
+				[queue close];	//TODO: Strange crash here when finalizing statements!
 		}
 	}
 }
