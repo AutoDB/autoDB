@@ -555,9 +555,8 @@ static AutoDB *sharedInstance = nil;
 		[queue.thread start];
 	}
 	
-	//also check if we need syncing
-	if (AutoSyncHandlerClass && pathsForClassNames)
-		[AutoSyncHandlerClass setupSync:pathsForClassNames];
+	//also check if we need syncing - TODO: do this properly instead!
+	//if (AutoSyncHandlerClass && pathsForClassNames) [AutoSyncHandlerClass setupSync:pathsForClassNames];
 }
 
 //default implementation does nothing
