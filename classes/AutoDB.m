@@ -977,6 +977,7 @@ static AutoDB *sharedInstance = nil;
 	Class subclass = classObject;
 	while (subclass != NSObject.class)
 	{
+		NSSet *excludedParams = [classObject excludeParametersFromTable];
 		unsigned int propertyCount;
 		objc_property_t *propertyList = class_copyPropertyList(subclass, &propertyCount);
 		for (unsigned int i = 0; i < propertyCount; i++)
@@ -1005,7 +1006,7 @@ static AutoDB *sharedInstance = nil;
 			NSString *propertyNameString = @(propertyName);
 			
 			//check for exlusion
-			if ([[classObject excludeParametersFromTable] containsObject:propertyNameString])
+			if ([excludedParams containsObject:propertyNameString])
 			{
 				continue;
 			}
