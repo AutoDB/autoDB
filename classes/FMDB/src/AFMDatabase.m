@@ -1815,26 +1815,36 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
 
 @implementation FMStatement
 
-@synthesize statement=_statement;
-@synthesize query=_query;
-@synthesize useCount=_useCount;
-@synthesize inUse=_inUse;
+//there is a strange bug when deallocing statements, we try to fix it by wrapping close in a queue.
+static dispatch_queue_t queue = nil;
+- (instancetype)init
+{
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^(void)
+	{
+		queue = dispatch_queue_create("statement", NULL);
+	});
+	return [super init];
+}
 
 - (void)dealloc
 {
 	[self close];
-	FMDBRelease(_query);
-#if ! __has_feature(objc_arc)
-	[super dealloc];
-#endif
+	_query = nil;
 }
-
 - (void)close
 {
 	if (_statement)
 	{
-		sqlite3_finalize(_statement);
-		_statement = 0x00;
+		//it dies here when a closure releases the objects - and I think its because we call close at the same time.
+		dispatch_sync(queue, ^(void)
+		{
+			if (self->_statement)
+			{
+				sqlite3_finalize(self->_statement);
+				self->_statement = 0x00;
+			}
+		});
 	}
 	
 	_inUse = NO;
