@@ -1980,16 +1980,16 @@ static dispatch_queue_t statementQueue;
 							BOOL found = YES;
 							for (NSString *column in columns)
 							{
-								NSLog(@"comparing %@", result[column]);
+								if (DEBUG) NSLog(@"AutoDB comparing %@: %@", column, result[column]);
 								if ([[object valueForKey:column] isEqual:result[column]] == NO)
 								{
-									found = NO;
+									found = NO;	//all must be equal in order for removal
 									break;
 								}
 							}
 							if (found)
 							{
-								NSLog(@"found myself a duplicate - we cannot save this!");
+								//NSLog(@"found myself a duplicate - we cannot save this!");
 								[object willBeDeleted];
 								object.is_deleted = YES;
 								[objectsToCreate removeObject:object];
