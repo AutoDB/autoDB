@@ -1506,6 +1506,19 @@ static NSMutableDictionary <NSString*, NSNumber*>* throttleKeys;
 	return bitField;
 }
 
++ (NSUInteger) setBitField:(NSUInteger)bitField value:(NSUInteger)value on:(BOOL)on
+{
+	if (on)
+	{
+		bitField |= value;
+	}
+	else
+	{
+		bitField &= (~value);
+	}
+	return bitField;
+}
+
 ///Add all our values into an array using only certain columns.
 - (void) addAllValues:(NSMutableArray*)values usingColumns:(NSArray*)columns
 {

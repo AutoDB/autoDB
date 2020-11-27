@@ -368,6 +368,7 @@ u_int64_t generateRandomAutoId(void);
 - (BOOL) bitField:(NSUInteger)bitField isSet:(NSUInteger)value;
 ///Beginning of making setting and getting values from bitFields (enums) automatic.
 - (NSUInteger) setBitField:(NSUInteger)bitField value:(NSUInteger)value on:(BOOL)on;
++ (NSUInteger) setBitField:(NSUInteger)bitField value:(NSUInteger)value on:(BOOL)on;
 
 ///return an array with all values in the table for a (the first) column.
 + (nullable NSMutableArray*) groupConcatQuery:(nonnull NSString*)query arguments:(nullable NSArray*)arguments;
