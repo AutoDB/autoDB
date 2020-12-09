@@ -79,7 +79,7 @@
 /// @name Iterating through the result set
 ///---------------------------------------
 
-/** Retrieve ö row for result set.
+/** Retrieve a row for result set.
  
  You must always invoke `next` before attempting to access the values returned in a query, even if you're only expecting one.
 

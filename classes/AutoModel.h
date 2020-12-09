@@ -238,7 +238,7 @@ u_int64_t generateRandomAutoId(void);
 #pragma mark - perform changes manually
 
 ///Async execution of any query thread-safe inside db. This is the preferred method to execute queries in the db, if you are calling from outside AutoDB. 
-+ (void) executeInDatabase:(void (^)(AFMDatabase *db))block;
++ (void) executeInDatabase:(void (^)(AFMDatabase *db))block NS_SWIFT_NAME(executeIn(db:));
 ///Sync execution of any queries (may be nested), inside db.
 + (void) inDatabase:(DatabaseBlock)block;
 

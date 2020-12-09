@@ -355,7 +355,7 @@
 
 
 // Documentation forthcoming.
-- (BOOL)executeUpdate:(NSString*)sql withVAList: (va_list)args;
+- (BOOL)executeUpdate:(NSString*)sql withVAList: (va_list)args NS_SWIFT_UNAVAILABLE("withVAList won't work, API will change soon");
 
 
 /** Last insert rowid
