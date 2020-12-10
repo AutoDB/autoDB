@@ -261,6 +261,9 @@ u_int64_t generateRandomAutoId(void);
 
 #pragma mark - fetch with ids
 
+///Fetch objects from cache only
++ (NSArray <AutoModel*>*) itemsInCache:(NSArray <NSNumber*>*)ids;
+
 ///Fetch all objects (of the type of the calling class), by id. Will not fetch objects where is_deleted is set. Automatically detecting if within db or not.
 ///@note ids can consist of an array of NSNumber or NSString (as long as those strings are numbers e.g. "5").
 ///@note rows returned may come in any order.

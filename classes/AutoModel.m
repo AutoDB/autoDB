@@ -773,6 +773,23 @@ u_int64_t generateRandomAutoId()
 	  */
 }
 
+#pragma mark - cache status
+
++ (NSArray*) itemsInCache:(NSArray <NSNumber*>*)ids
+{
+	NSMutableArray *array = [NSMutableArray new];
+	[self.tableCache syncPerformBlock:^(NSMapTable * _Nonnull table)
+	{
+		for (NSNumber *idNum in ids)
+		{
+			AutoModel *item = [table objectForKey:idNum];
+			if (item)
+				[array addObject:item];
+		}
+	}];
+	return array;
+}
+
 #pragma mark - fetch with query
 
 ///Private blocking method to fetch results.
