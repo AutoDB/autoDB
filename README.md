@@ -36,14 +36,6 @@ Open AutoDBExample to see an example project.
 
 ---
 
-## 🚀🚀 Sponsorships 🚀🚀
-
-AutoDB is fully funded by [Aggressive Development AB](https://aggressive.se). Who are currently using it in the great news reader [Feeds](https://feeds-app.com), please check it out! (Its also my job).
-
-If you require support or need a feature implemented, you can support its development. You can also be listed here as an official sponsor. Feel free to drop me a line at [autoDB@aggressive.se](mailto:autoDB@aggressive.se) or twitter [@olof_t](https://twitter.com/olof_t)
-
----
-
 ## Performance
 
 AutoDB has very little overhead, in fact since it automatically performs bulk-saves of all changed objects it may be very well more performant than doing sql-queries manually. It uses SQLite with regular queries which is very fast. One can also add indexes to make fetches even faster.
@@ -76,6 +68,12 @@ All of the underlying SQLite-power is still accessible, and you are free to perf
 Syncing is almost complete, and will be open source as well. Including the server-side code. This will make AutoDB a easy to use, robust and free alternative to commercial software. So you can make sure your customers data stays safe instead of giving it to third parties and hope for their good will.
 
 The classes for syncing and some documentation is included so if you want to take it for a spin you can.
+
+---
+
+## Contact
+
+Feel free to drop me a line at [autoDB@aggressive.se](mailto:autoDB@aggressive.se) or twitter [@olof_t](https://twitter.com/olof_t)
 
 ---
 
